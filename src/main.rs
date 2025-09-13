@@ -8,6 +8,9 @@ fn main() {
 
     // Wait for user input
     let mut input = String::new();
-    io::stdin().read_line(&mut input).unwrap();
-    println!("{}: command not found", input.trim());
+    while input != "exit" {
+        io::stdin().read_line(&mut input).unwrap();
+        println!("{}: command not found", input.trim());
+        input.clear();
+    }
 }
