@@ -12,5 +12,7 @@ fn main() {
         io::stdin().read_line(&mut input).unwrap();
         println!("{}: command not found", input.trim());
         input.clear();
+        print!("$ ");
+        io::stdout().flush().unwrap();
     }
 }
