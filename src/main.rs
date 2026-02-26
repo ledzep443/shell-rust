@@ -15,6 +15,7 @@ fn main() {
         match cmd {
             Command::Exit => break,
             Command::Echo { display_string } => println!("{display_string}"),
+            Command::TypeOf { command } => println!("{:} is a shell builtin", command),
             Command::NotFound => println!("{:}: command not found", input.trim()),
         }
     }

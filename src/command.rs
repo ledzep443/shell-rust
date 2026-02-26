@@ -2,6 +2,7 @@
 pub(crate) enum Command {
     Exit,
     Echo { display_string: String },
+    TypeOf { command: String },
     NotFound
 }
 
@@ -11,6 +12,7 @@ impl Command {
         match input.trim().split(' ').collect::<Vec<&str>>().first().unwrap() {
             &"exit" => Self::Exit,
             &"echo" => Self::Echo { display_string: input["echo ".len()..].to_string() },
+            &"typeof" => Self::TypeOf { command: input["typeof ".len()..].to_string() },
             _ => Self::NotFound
         }
     }
